@@ -23,13 +23,18 @@ function clearGrid(){
         e.parentNode.removeChild(e);
         });
 }
-// start
+// start program
 createGrid(16);  
 
 // prompt user for squares on button click, and make grid of size
 const button = document.querySelector('button');
-button.addEventListener('click', function(e){
-    const numOfSquares = prompt("How many squares per side for new grid?");
+button.addEventListener('click', function(){
+    let numOfSquares = prompt("How many squares per side for new grid?");
+    
+    // make sure prompt doesn't break it.
+    while (numOfSquares > 50 || numOfSquares < 1){
+        numOfSquares = prompt("Don't mess with my sketch pad. 1 - 50 is all you get.");
+    }
     clearGrid();
     // Create new grid
     createGrid(numOfSquares);

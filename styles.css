@@ -1,10 +1,16 @@
-* {
-    box-sizing: border-box;
-  }
-
 body{
     font: bold 15px Arial, Helvetica, sans-serif;
     background-color: rgb(206, 179, 179);
+    margin: 0;
+    margin-bottom: 50px;
+}
+h1{
+    margin: 0;
+    background-color: rgb(116, 2, 2);
+    color: white;
+    text-decoration: none;
+    padding: 1em;  
+    text-align: center;
 }
 div{
     border: 3px solid rgb(116, 2, 2);
@@ -12,19 +18,19 @@ div{
 }
 .container{
     display: grid;
-    width: 500px;
+    width: 60%;
     height: 500px;
     margin: 0 auto;
-    border-radius: 10px;
     grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    
+    grid-template-rows: repeat(16, 1fr);  
+    border-radius: 10px; 
 }
 .hover{
     background-color: black;
 }
 .container div{
-    padding: 10px;
+    width: auto;
+    height: auto;
 }
 button{
     display: block;
@@ -34,4 +40,5 @@ button{
     color: white;
     border: 3px solid rgb(28, 87, 53);
     border-radius: 10px;
+    cursor: pointer;
 }
