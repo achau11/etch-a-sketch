@@ -1,11 +1,30 @@
 /*Arranging divs into 16x16 layout*/
+body{
+    font: bold 15px Arial, Helvetica, sans-serif;
+    background-color: rgb(206, 179, 179);
+}
 .container{
     display: grid;
     width: 60%;
     margin: 0 auto;
+    border-radius: 10px;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
 }
 div{
     border: 3px solid rgb(116, 2, 2);
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.hover{
+    background-color: black;
+}
+button{
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: seagreen;
+    color: white;
+    border: 3px solid rgb(28, 87, 53);
+    border-radius: 10px;
 }
