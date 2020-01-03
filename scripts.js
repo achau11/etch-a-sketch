@@ -9,29 +9,30 @@ function createGrid(size){
             container.appendChild(gridBox);
         }   
     }
+    // add event listener to each div in grid
+    const divs = document.querySelectorAll('.container div');
+    divs.forEach( function(divs){
+        divs.addEventListener('mouseover', function(e){
+            e.target.classList.add('hover');
+        });
+    });  
 }
-// function to change color of div on hover:
-function changeColor(e){
-    e.target.classList.add('hover');
+function clearGrid(){
+    const divs = document.querySelectorAll('.container div');
+    divs.forEach( function(e){
+        e.parentNode.removeChild(e);
+        });
 }
 // start
 createGrid(16);  
 
-// add event listener to each div in grid
-const divs = document.querySelectorAll('.container div');
-divs.forEach( function(divs){
-    divs.addEventListener('mouseover', changeColor);
-});               
-//function to revert color of all divs:
-function revertColor(){
-    divs.forEach(function(divs){
-        divs.classList.remove('hover');
-    });
-}
-// prompt user for squares on button click and make grid of size
+// prompt user for squares on button click, and make grid of size
 const button = document.querySelector('button');
 button.addEventListener('click', function(e){
     const numOfSquares = prompt("How many squares per side for new grid?");
+    clearGrid();
+    // Create new grid
     createGrid(numOfSquares);
-    revertColor();
+    container.style.gridTemplateColumns = `repeat(${numOfSquares}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${numOfSquares}, 1fr)`;
 });
